@@ -44,3 +44,41 @@ table {
   cursor: pointer;
   background-color: rgb(167, 167, 167);
 }
+
+@media screen and (max-width: 600px) {
+  .mat-cell,
+  .mat-header-cell {
+    font-size: 12px;
+    font-family: Verdana, Sans-Serif;
+    display: table-cell;
+    height: 48px;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    border-left: 1px solid rgba(0, 0, 0, 0.12);
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+  }
+  table {
+    width: 100%;
+  }
+  .pagination h1 {
+    font-size: 18px;
+  }
+  td {
+    font-size: 9px;
+    font-weight: 500;
+  }
+  .mat-elevation-z8 {
+    margin: 0;
+    width: 100%;
+  }
+  .mat-raised-button {
+    min-width: 16px;
+    line-height: 20px;
+  }
+  .circleImage {
+    border-radius: 50px;
+    width: 25px;
+    padding-top: 2px;
+  }
+}
