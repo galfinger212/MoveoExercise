@@ -1,0 +1,15 @@
+ul li {
+  list-style: none;
+}
+mat-toolbar {
+  background-color: white;
+}
+.mat-toolbar-row-Footer {
+  display: flex;
+  justify-content: space-between;
+}
+ol,
+ul,
+dl {
+  margin-top: auto;
+}

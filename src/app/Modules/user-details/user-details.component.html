@@ -1,0 +1,27 @@
+<div>
+    <mat-card class="example-card">
+        <mat-card-header>
+            <img mat-card-avatar class="profile-image" src="{{user.picture.medium}}"/>
+          <mat-card-title>{{user.name.first}}  {{user.name.last}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <agm-map [latitude]="lat" [longitude]="lng" >
+                <agm-marker [latitude]="lat" [longitude]="lng"> </agm-marker>
+            </agm-map>
+        </mat-card-content>
+        <mat-card-content>
+            <div>
+                <span class="prop-title">Email: </span>
+                {{user.email}}
+            </div>
+        </mat-card-content>
+        <mat-card-content>
+            <span class="prop-title">Age: </span>
+            {{user.dob.age}}
+        </mat-card-content>
+        <mat-card-content>
+            <span class="prop-title">Gender: </span>
+            {{user.gender}}
+        </mat-card-content>
+      </mat-card>
+</div>
