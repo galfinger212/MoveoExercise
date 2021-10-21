@@ -28,7 +28,12 @@ export class AllUsersComponent implements AfterViewInit {
   dataSource: MatTableDataSource<UserData> = new MatTableDataSource<UserData>();
   pageNumber: number = 1;
 
-  constructor(private router: Router, private httpService: HttpService) { }
+  constructor(private router: Router, private httpService: HttpService) {
+    this.pageNumber = this.router.getCurrentNavigation()?.extras.state?.pageNumber;
+    if (this.pageNumber === undefined) {
+      this.pageNumber = 1;
+    }
+  }
 
   //init the users list
   ngAfterViewInit(): void {
@@ -74,7 +79,7 @@ export class AllUsersComponent implements AfterViewInit {
   displayUser(user: any, event: any) {
     var mailRef = document.getElementById(user.Email)
     if (mailRef !== event.target) {
-      this.router.navigate([user.FullName], { state: { user: user } });
+      this.router.navigate([user.FullName], { state: { user: user, pageNumber: this.pageNumber } });
     }
   }
 

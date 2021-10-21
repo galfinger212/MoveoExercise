@@ -1,8 +1,8 @@
 <app-header (toggleSidbarForme)="sideBarToggle()"></app-header>
 
 <mat-drawer-container>
-    <mat-drawer mode="side" [opened]="sideBarOpen">
-        <app-sidebar></app-sidebar>
+    <mat-drawer  mode="over" [opened]="sideBarOpen">
+        <app-sidebar ></app-sidebar>
     </mat-drawer>
     <mat-drawer-content>
         <router-outlet></router-outlet>

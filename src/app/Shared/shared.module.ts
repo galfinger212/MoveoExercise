@@ -11,6 +11,7 @@ import { FlexLayoutModule } from '@angular/flex-layout'
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider'
 import { RouterModule } from '@angular/router';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 
 
@@ -29,12 +30,14 @@ import { RouterModule } from '@angular/router';
     FlexLayoutModule,
     MatIconModule,
     MatDividerModule,
-    RouterModule
+    RouterModule,
+    MatSidenavModule
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
-    SideBarComponent
+    SideBarComponent,
+
   ]
 })
 export class SharedModule { }
