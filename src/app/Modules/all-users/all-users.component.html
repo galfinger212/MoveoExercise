@@ -18,13 +18,13 @@
             <th mat-sort-header="Email" mat-header-cell *matHeaderCellDef > Email </th>
             <td class="emailCell"  mat-cell *matCellDef="let row"> <a class="email" id="{{row.Email}}" href="mailto:{{row.Email}}" >{{row.Email}}</a> </td>
         </ng-container>
-        <ng-container matColumnDef="Gender">
-            <th mat-header-cell *matHeaderCellDef > Gender </th>
-            <td mat-cell *matCellDef="let row"> {{row.Gender}} </td>
-        </ng-container>
         <ng-container matColumnDef="Age">
             <th mat-sort-header="Age" mat-header-cell *matHeaderCellDef > Age </th>
             <td mat-cell *matCellDef="let row"> {{row.Age}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Gender">
+            <th mat-header-cell *matHeaderCellDef > Gender </th>
+            <td mat-cell *matCellDef="let row"> {{row.Gender}} </td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr class="fullName" (click)="displayUser(row,$event)" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

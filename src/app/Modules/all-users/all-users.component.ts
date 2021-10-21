@@ -4,7 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { HttpService } from 'src/app/Services/http.service';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Sort } from '@angular/material/sort';
+import { MatSort, Sort } from '@angular/material/sort';
 
 export interface UserData {
   Image: string;
@@ -24,9 +24,10 @@ export interface UserData {
 export class AllUsersComponent implements AfterViewInit {
   sortedUsers!: UserData[];
   users: UserData[] = [];
-  displayedColumns: string[] = ['Image', 'Full Name', 'Email', 'Gender', 'Age'];
+  displayedColumns: string[] = ['Image', 'Full Name', 'Email', 'Age', 'Gender'];
   dataSource: MatTableDataSource<UserData> = new MatTableDataSource<UserData>();
   pageNumber: number = 1;
+  @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private router: Router, private httpService: HttpService) {
     this.pageNumber = this.router.getCurrentNavigation()?.extras.state?.pageNumber;
@@ -93,6 +94,10 @@ export class AllUsersComponent implements AfterViewInit {
         this.users.push(userData)
       }
       this.dataSource = new MatTableDataSource(this.users);
+      const sortState: Sort = { active: '', direction: '' };
+      this.sort.active = sortState.active;
+      this.sort.direction = sortState.direction;
+      this.sort.sortChange.emit(sortState);
     },
       (error: HttpErrorResponse) => {
         console.log(error);
