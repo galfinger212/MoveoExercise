@@ -5,26 +5,26 @@
         <h1>Page number {{pageNumber}}</h1> 
         <button mat-raised-button (click)="nextPage()">&raquo;</button>
       </div>
-    <table mat-table [dataSource]="dataSource" matSort>
+    <table matSort (matSortChange)="sortData($event)" mat-table [dataSource]="dataSource" matSort>
         <ng-container matColumnDef="Image">
             <th mat-header-cell *matHeaderCellDef > Image </th>
-            <td mat-cell *matCellDef="let row"> <img class="circleImage" src={{row.picture.medium}} /> </td>
+            <td mat-cell *matCellDef="let row"> <img class="circleImage" src={{row.Image}} /> </td>
         </ng-container>
         <ng-container matColumnDef="Full Name">
-            <th mat-header-cell *matHeaderCellDef > Full Name </th>
-            <td  mat-cell *matCellDef="let row"> <span  >{{row.name.first + " " + row.name.last}}</span> </td>
+            <th mat-sort-header="FullName" mat-header-cell *matHeaderCellDef > Full Name </th>
+            <td  mat-cell *matCellDef="let row"> <span  >{{row.FullName}}</span> </td>
         </ng-container>
         <ng-container  matColumnDef="Email">
-            <th mat-header-cell *matHeaderCellDef > Email </th>
-            <td  mat-cell *matCellDef="let row"> <a id="mail" href="mailto:{{row.email}}" >{{row.email}}</a> </td>
+            <th mat-sort-header="Email" mat-header-cell *matHeaderCellDef > Email </th>
+            <td  mat-cell *matCellDef="let row"> <a id="{{row.Email}}" href="mailto:{{row.Email}}" >{{row.Email}}</a> </td>
         </ng-container>
         <ng-container matColumnDef="Gender">
             <th mat-header-cell *matHeaderCellDef > Gender </th>
-            <td mat-cell *matCellDef="let row"> {{row.gender}} </td>
+            <td mat-cell *matCellDef="let row"> {{row.Gender}} </td>
         </ng-container>
         <ng-container matColumnDef="Age">
-            <th mat-header-cell *matHeaderCellDef > Age </th>
-            <td mat-cell *matCellDef="let row"> {{row.dob.age}} </td>
+            <th mat-sort-header="Age" mat-header-cell *matHeaderCellDef > Age </th>
+            <td mat-cell *matCellDef="let row"> {{row.Age}} </td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr class="fullName" (click)="displayUser(row,$event)" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

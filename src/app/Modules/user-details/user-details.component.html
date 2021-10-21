@@ -1,8 +1,8 @@
 <div>
     <mat-card class="example-card">
         <mat-card-header>
-            <img mat-card-avatar class="profile-image" src="{{user.picture.medium}}"/>
-          <mat-card-title>{{user.name.first}}  {{user.name.last}}</mat-card-title>
+            <img mat-card-avatar class="profile-image" src="{{user.Image}}"/>
+          <mat-card-title>{{user.FullName}}</mat-card-title>
         </mat-card-header>
         <mat-card-content>
             <agm-map [latitude]="lat" [longitude]="lng" >
@@ -10,18 +10,42 @@
             </agm-map>
         </mat-card-content>
         <mat-card-content>
+            <span class="prop-title">Country & State: </span>
+            {{user.Location.country}}, {{user.Location.state}}
+        </mat-card-content>
+        <mat-card-content>
+            <span class="prop-title">Address: </span>{{user.Location.city}}, 
+            {{user.Location.street.name}}, {{user.Location.street.number}}
+        </mat-card-content>
+        <!-- <mat-card-content>
+            <span class="prop-title">Country: </span>
+            {{user.location.country}}
+        </mat-card-content>
+        <mat-card-content>
+            <span class="prop-title">State: </span>
+            {{user.location.state}}
+        </mat-card-content>
+        <mat-card-content>
+            <span class="prop-title">City: </span>
+            {{user.location.city}}
+        </mat-card-content>
+        <mat-card-content>
+            <span class="prop-title">Street: </span>
+            {{user.location.street.name}}, {{user.location.street.number}}
+        </mat-card-content> -->
+        <mat-card-content>
             <div>
                 <span class="prop-title">Email: </span>
-                {{user.email}}
+                {{user.Email}}
             </div>
         </mat-card-content>
         <mat-card-content>
             <span class="prop-title">Age: </span>
-            {{user.dob.age}}
+            {{user.Age}}
         </mat-card-content>
         <mat-card-content>
             <span class="prop-title">Gender: </span>
-            {{user.gender}}
+            {{user.Gender}}
         </mat-card-content>
       </mat-card>
 </div>

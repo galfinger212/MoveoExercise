@@ -44,11 +44,16 @@ table {
   cursor: pointer;
   background-color: rgb(167, 167, 167);
 }
-
 @media screen and (max-width: 600px) {
+  .fullName:hover {
+    cursor: pointer;
+    background-color: white;
+  }
   .mat-cell,
   .mat-header-cell {
-    font-size: 12px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 600;
     font-family: Verdana, Sans-Serif;
     display: table-cell;
     height: 48px;
@@ -57,20 +62,20 @@ table {
     border-top: 1px solid rgba(0, 0, 0, 0.12);
     border-left: 1px solid rgba(0, 0, 0, 0.12);
     border-right: 1px solid rgba(0, 0, 0, 0.12);
-  }
-  table {
-    width: 100%;
+    padding-left: 2px !important;
+    padding-right: 2px !important;
   }
   .pagination h1 {
     font-size: 18px;
   }
   td {
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 500;
   }
   .mat-elevation-z8 {
     margin: 0;
     width: 100%;
+    box-shadow: none;
   }
   .mat-raised-button {
     min-width: 16px;

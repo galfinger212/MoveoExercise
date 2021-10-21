@@ -11,17 +11,17 @@ export class UserDetailsComponent implements OnInit {
   user: any;
   lat: any;
   lng: any;
+
   constructor(private router: Router) {
     this.user = this.router.getCurrentNavigation()?.extras.state?.user;
     if (this.user) {
-      this.lat = parseFloat(this.user.location.coordinates.latitude);
-      this.lng = parseFloat(this.user.location.coordinates.longitude);
+      this.lat = parseFloat(this.user.Location.coordinates.latitude);
+      this.lng = parseFloat(this.user.Location.coordinates.longitude);
     } else {
       this.router.navigate(['']);
     }
   }
 
   ngOnInit(): void {
-    console.log(this.user);
   }
 }
