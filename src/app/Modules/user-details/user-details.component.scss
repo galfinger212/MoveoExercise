@@ -16,7 +16,8 @@ mat-card-header {
   text-align: center;
   font-weight: 500;
   font-size: 40px;
-  font-family: cursive;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   padding-bottom: 10px;
 }
 
@@ -34,5 +35,11 @@ mat-card-header {
   agm-map {
     width: 250px;
     height: 250px;
+  }
+}
+@media screen and (max-height: 710px) {
+  .example-card {
+    max-height: 350px;
+    overflow-y: auto;
   }
 }
