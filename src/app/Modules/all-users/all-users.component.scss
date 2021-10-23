@@ -129,6 +129,11 @@ tr.mat-header-row {
     padding-top: 2px;
   }
 }
+@media (hover: hover) {
+  button:hover {
+    background-color: #ece1ff;
+  }
+}
 @media screen and (max-height: 800px) {
   .pageTitle {
     font-size: 20px;
