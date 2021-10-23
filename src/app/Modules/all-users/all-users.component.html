@@ -1,9 +1,11 @@
-
+<h1 class="pageTitle">
+    All users
+</h1>
 <div class="mat-elevation-z8">
     <div class="pagination">
-        <button *ngIf="pageNumber>1" mat-raised-button (click)="previousPage()">&laquo;</button>
-        <h1>Page number {{pageNumber}}</h1> 
-        <button mat-raised-button (click)="nextPage()">&raquo;</button>
+        <button class="previousButton" *ngIf="pageNumber>1" mat-raised-button (click)="previousPage()">&laquo;</button>
+        <h1>Page {{pageNumber}}</h1> 
+        <button class="nextButton" mat-raised-button (click)="nextPage()">&raquo;</button>
       </div>
     <table matSort (matSortChange)="sortData($event)" mat-table [dataSource]="dataSource" matSort>
         <ng-container matColumnDef="Image">
@@ -24,7 +26,7 @@
         </ng-container>
         <ng-container matColumnDef="Gender">
             <th mat-header-cell *matHeaderCellDef > Gender </th>
-            <td mat-cell *matCellDef="let row"> {{row.Gender}} </td>
+            <td mat-cell *matCellDef="let row"> <img class="circleImage genderImage" src="/assets/{{row.Gender}}.png" /> </td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr class="fullName" (click)="displayUser(row,$event)" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

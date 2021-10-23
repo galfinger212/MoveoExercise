@@ -1,16 +1,27 @@
 table {
   width: 100%;
+  border-radius: 10px;
 }
-
+.pageTitle {
+  text-align: center;
+  font-weight: 500;
+  font-size: 40px;
+  font-family: cursive;
+  padding-bottom: 10px;
+}
 .mat-elevation-z8 {
   width: 60%;
   height: auto;
   margin: auto;
+  border-radius: 20px;
 }
 .circleImage {
   border-radius: 50px;
   width: 55px;
   padding-top: 2px;
+}
+.genderImage {
+  width: 35px;
 }
 
 .pagination {
@@ -21,6 +32,7 @@ table {
 }
 .pagination h1 {
   margin: auto;
+  font-family: cursive;
 }
 .pagination button {
   color: black;
@@ -28,6 +40,12 @@ table {
   padding: 8px 16px;
   text-decoration: none;
   font-size: 20px;
+}
+.nextButton {
+  border-radius: 0px 20px 0px 0px;
+}
+.previousButton {
+  border-radius: 20px 0px 0px 0px;
 }
 
 .pagination button.active {
@@ -39,7 +57,7 @@ table {
   cursor: pointer;
   background-color: rgb(167, 167, 167);
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 850px) {
   .email {
     word-break: break-all;
     font-size: 9px;
@@ -81,7 +99,6 @@ table {
   .mat-elevation-z8 {
     margin: 0;
     width: 100%;
-    box-shadow: none;
   }
   .mat-raised-button {
     min-width: 16px;

@@ -17,3 +17,8 @@ mat-drawer-content {
     width: 160px;
   }
 }
+@media screen and (max-width: 850px) {
+  mat-drawer {
+    width: 200px;
+  }
+}

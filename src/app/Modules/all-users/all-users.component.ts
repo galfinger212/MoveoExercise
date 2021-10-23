@@ -1,7 +1,6 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
 import { HttpService } from 'src/app/Services/http.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { MatSort, Sort } from '@angular/material/sort';
@@ -27,6 +26,7 @@ export class AllUsersComponent implements AfterViewInit {
   displayedColumns: string[] = ['Image', 'Full Name', 'Email', 'Age', 'Gender'];
   dataSource: MatTableDataSource<UserData> = new MatTableDataSource<UserData>();
   pageNumber: number = 1;
+
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private router: Router, private httpService: HttpService) {
@@ -104,8 +104,9 @@ export class AllUsersComponent implements AfterViewInit {
       })
   }
 
+  //Sort the rows when the user clicks on the headers
   sortData(sort: Sort) {
-    if (!sort.active || sort.direction === '') {//Back to normal
+    if (!sort.active || sort.direction === '') {//Back to default
       this.sortedUsers = this.users.slice();
     }
     else {
@@ -122,6 +123,8 @@ export class AllUsersComponent implements AfterViewInit {
     this.dataSource = new MatTableDataSource(this.sortedUsers);
   }
 }
+
+
 function compare(a: number | string, b: number | string, isAsc: boolean) {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }
