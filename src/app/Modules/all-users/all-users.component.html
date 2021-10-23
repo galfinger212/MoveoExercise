@@ -2,8 +2,8 @@
     All users
 </h1>
 <div class="mat-elevation-z8">
-    <div class="pagination">
-        <button class="previousButton" *ngIf="pageNumber>1" mat-raised-button (click)="previousPage()">&laquo;</button>
+    <div class="navBarRow">
+        <button class="previousButton" [disabled]="pageNumber>1 ? false : true" mat-raised-button (click)="previousPage()">&laquo;</button>
         <h1>Page {{pageNumber}}</h1> 
         <button class="nextButton" mat-raised-button (click)="nextPage()">&raquo;</button>
       </div>

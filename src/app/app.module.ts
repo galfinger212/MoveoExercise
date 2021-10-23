@@ -14,12 +14,14 @@ import { AllUsersComponent } from './Modules/all-users/all-users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserDetailsComponent } from './Modules/user-details/user-details.component';
 import { AgmCoreModule } from '@agm/core';
+import { AboutComponent } from './Modules/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AllUsersComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

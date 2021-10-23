@@ -4,3 +4,15 @@
     margin-right: 20px;
   }
 }
+a {
+  display: flex;
+  padding: 10px;
+}
+a:hover {
+  background-color: rgb(194, 186, 186);
+}
+@media (hover: none) {
+  a:hover {
+    background-color: rgb(194, 186, 186) !important;
+  }
+}

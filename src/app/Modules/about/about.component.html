@@ -1,0 +1,55 @@
+<div>
+    <h3>
+        Task structure:
+    </h3>
+       <p>
+        A page with the title "All users" inside which has a table of users.
+        Each row in the table should have the following properties - picture, full name, email (sends the user an email by clicking),
+        Gender and age of the user.
+        In addition, it will be possible to browse between the different pages (10 lines per page).
+        When we click on a user we move to the next page where all his details appear again and in addition to that also the location of the user on the map.
+        Bonus - add sorters.
+       </p>
+    <p>
+        I chose this task to work with Angular.
+        I divided the project into 3 main modules.
+    </p>
+    <p>
+        <span>APP MODULE - </span>where I have the service that is responsible for retrieving data from the external API.
+        A component that has a user table, a user details component with its location on the map and an ABOUT page that explains the site.
+    </p>
+    <p>
+        <span>SHARED MODULE - </span>where I have the components of the Header SideBar and the Footer.
+    </p>
+    <p>
+        <span>CORE MODULE - </span>where I create the template of the site with the ROUTER-OUTLET.    </p>
+    <h3>
+        First of all,
+    </h3>
+    <p>
+        
+        I read the documentation of the free api of the random users. After realizing how it works and what data I need to pull (do not need everything), I built a service that pulls out the data I need according to the page number the user browses.
+        I started building the header, footer and sidebar.
+        When you press the burger button in header it will open the sidebar on the side.
+        Next, I built a component of the user table with right and left buttons to move pages back and forth. There I filled in the data I pulled from the service that I built.
+        When you click on the email, it sends a new email to the user.
+    </p>
+    <p>
+        After finishing building the table and saw that the data was entering the correct fields, I opened a new component of user details.
+        I read the Google Maps documentation and used the KEY API they gave me to get the map where I could mark the coordinates of the user's address.
+    </p>
+    <p>
+        When we select a user from the table (when clicking) we move to a new URL that includes the full name of the user.
+        In addition, I passed all the user's details to the component through the router.
+        When the component is loaded on the screen it loads the details it received from the router and fills them in user details (full name, address, location on the map, age, gender, email and photo.
+        After finishing building these components and saw that everything was working properly, I started designing the whole site, making it more responsive and user-friendly.
+        After the initial version (that everything worked), I uploaded the project to git and from there to Production via netlify.
+        When I saw that the site was up and running and completed all the requirements I worked on the bonus mission and added a sort by age, full name and email.
+    </p>
+    <h3>
+        In conclusion,
+    </h3>
+    <p>
+        I really enjoyed working on this project and trying to make it as user-friendly as possible.
+    </p>
+</div>

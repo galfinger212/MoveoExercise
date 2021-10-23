@@ -3,12 +3,18 @@
 }
 table {
   width: 100%;
-  border-collapse: collapse;
-  border-radius: 5em;
 }
+
 table tr:last-child td /*To remove the last border*/ {
   border-bottom: 0 solid;
 }
+table tr:last-child td:last-child /*To remove the last right border*/ {
+  border-right: 0 solid;
+}
+table tr:last-child td:first-child /*To remove the last left border*/ {
+  border-left: 0 solid;
+}
+
 tr.mat-header-row {
   height: 35px;
 }
@@ -19,22 +25,27 @@ tr.mat-header-row {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+
 .mat-elevation-z8 {
   width: 60%;
   height: auto;
   margin: auto;
   border-radius: 20px;
 }
+
+//user image
 .circleImage {
   border-radius: 50px;
   width: 50px;
   padding-top: 2px;
 }
+
+//gender image
 .genderImage {
   width: 35px;
 }
 
-.pagination {
+.navBarRow {
   background-color: #e5d5ff;
   min-width: 302px;
   width: 100%;
@@ -42,12 +53,13 @@ tr.mat-header-row {
   display: flex;
   border-radius: 20px 20px 0px 0px;
 }
-.pagination h1 {
+.navBarRow h1 {
   margin: auto;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-.pagination button {
+
+.navBarRow button {
   box-shadow: none;
   color: black;
   float: left;
@@ -56,19 +68,21 @@ tr.mat-header-row {
   font-size: 20px;
   background-color: #ece1ff;
 }
-.pagination button:hover {
+.navBarRow button:hover {
   background-color: #c3a7f0;
+}
+button:disabled {
+  border: 1px solid #999999;
+  opacity: 0.2;
+}
+button:disabled:hover:not([disabled="disabled"]) {
+  background-color: #ece1ff !important;
 }
 .nextButton {
   border-radius: 0px 20px 0px 0px;
 }
 .previousButton {
   border-radius: 20px 0px 0px 0px;
-}
-
-.pagination button.active {
-  color: white;
-  border-radius: 5px solid black;
 }
 
 .fullName:hover {
@@ -88,6 +102,10 @@ tr.mat-header-row {
     cursor: pointer;
     background-color: white;
   }
+  .fullName:active {
+    cursor: pointer;
+    background-color: rgb(167, 167, 167);
+  }
   .mat-cell,
   .mat-header-cell {
     text-align: center;
@@ -104,10 +122,10 @@ tr.mat-header-row {
     padding-left: 2px !important;
     padding-right: 2px !important;
   }
-  .pagination {
+  .navBarRow {
     width: 100%;
   }
-  .pagination h1 {
+  .navBarRow h1 {
     font-size: 18px;
   }
   td {
@@ -135,6 +153,13 @@ tr.mat-header-row {
   }
 }
 @media screen and (max-height: 800px) {
+  .circleImage {
+    border-radius: 50px;
+    width: 25px;
+    padding-top: 2px;
+  }
+}
+@media screen and (max-height: 700px) {
   .pageTitle {
     font-size: 20px;
   }
@@ -143,15 +168,11 @@ tr.mat-header-row {
     width: 25px;
     padding-top: 2px;
   }
-}
-@media screen and (max-height: 700px) {
-  .circleImage {
-    border-radius: 50px;
-    width: 25px;
-    padding-top: 2px;
-  }
-  .mat-cell,
   .mat-header-cell {
+    height: 20px;
+    font-size: 8px;
+  }
+  .mat-cell {
     height: 20px;
     font-size: 6px;
   }
