@@ -129,9 +129,9 @@ tr.mat-header-row {
     padding-top: 2px;
   }
 }
-@media (hover: hover) {
+@media (hover: none) {
   button:hover {
-    background-color: #ece1ff;
+    background-color: #ece1ff !important;
   }
 }
 @media screen and (max-height: 800px) {
