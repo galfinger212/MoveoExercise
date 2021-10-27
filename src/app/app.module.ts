@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,7 +27,6 @@ import { AboutComponent } from './Modules/about/about.component';
     AppRoutingModule,
     CoreModule,
     BrowserAnimationsModule,
-    MatPaginatorModule,
     MatTableModule,
     MatButtonModule,
     MatInputModule,

@@ -5,11 +5,8 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { SideBarComponent } from './Components/side-bar/side-bar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
-import { FlexLayoutModule } from '@angular/flex-layout'
 import { MatIconModule } from '@angular/material/icon';
-import { MatDividerModule } from '@angular/material/divider'
 import { RouterModule } from '@angular/router';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
@@ -25,11 +22,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     CommonModule,
     MatToolbarModule,
     MatButtonModule,
-    MatMenuModule,
     MatListModule,
-    FlexLayoutModule,
     MatIconModule,
-    MatDividerModule,
     RouterModule,
     MatSidenavModule
   ],
@@ -37,7 +31,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     HeaderComponent,
     FooterComponent,
     SideBarComponent,
-
   ]
 })
 export class SharedModule { }
