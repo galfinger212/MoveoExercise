@@ -1,10 +1,8 @@
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatSortModule } from '@angular/material/sort';
 import { AppRoutingModule } from './app-routing.module';
@@ -28,10 +26,8 @@ import { AboutComponent } from './Modules/about/about.component';
     AppRoutingModule,
     CoreModule,
     BrowserAnimationsModule,
-    MatPaginatorModule,
     MatTableModule,
     MatButtonModule,
-    MatInputModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAxBhdKsJJt5-iiMVWvPhB3p-P_8l3pMUo' // get your api key from google
